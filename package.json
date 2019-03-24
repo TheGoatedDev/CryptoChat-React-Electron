@@ -1,0 +1,51 @@
+{
+  "name": "cryptochat",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Royal",
+  "main": "public/electron.js",
+  "dependencies": {
+    "electron-is-dev": "^1.0.1",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-scripts": "2.1.8"
+  },
+  "scripts": {
+    "start": "yarn electron-dev",
+    "start-web": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"yarn start-web\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "build build/electron.js",
+    "preelectron-pack": "yarn build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "electron": "^4.1.1",
+    "electron-builder": "^20.39.0",
+    "typescript": "^3.3.4000",
+    "wait-on": "^3.2.0"
+  },
+  "homepage": "./",
+  "build": {
+    "productName": "Crypto-Chat",
+    "appId": "com.royal.Crypto-Chat",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  }
+}

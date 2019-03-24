@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background: rgb(80, 80, 80);
+
+    overflow: hidden;
+
+}
+
+.App {
+	
+	width: 100vw;
+    height: 100vh;
+
+}

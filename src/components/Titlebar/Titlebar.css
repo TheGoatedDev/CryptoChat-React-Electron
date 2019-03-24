@@ -1,0 +1,61 @@
+:local(.container) {
+    display: block;
+
+    width: 100vw;
+    height: 20px;
+
+    padding-left: 10px;
+
+    background: rgb(70, 70, 70);
+
+    -webkit-app-region: drag;
+}
+
+
+:local(.title) {
+
+    display: inline;
+
+    color: white;
+    font-family: 'Pacifico', cursive;
+    font-size: 0.70rem;
+
+}
+
+:local(.contextMenu) {
+    -webkit-app-region: no-drag;
+    float: right;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: -3px;
+
+    height: 20px;
+}
+
+:local(.contextMenu > button) {
+    width: 30px;
+    height: 20px;
+
+    background: none;
+    border: none;
+
+
+    font-size: 0.75rem;
+
+    color: white;
+
+    outline: none;
+
+    transition: 0.25s;
+}
+
+
+:local(.closeBtn:hover) {
+    background: red;
+}
+:local(.minBtn:hover) {
+    background: rgb(80, 80, 80);
+}
+:local(.maxBtn:hover) {
+    background: rgb(80, 80, 80);
+}

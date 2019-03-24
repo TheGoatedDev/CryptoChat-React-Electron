@@ -1,0 +1,14 @@
+:local(.container) {
+    
+
+    width: 80px;
+    height: calc(100% - 20px);
+
+    text-align: center;
+
+    background: rgb(70, 70, 70);
+
+    //overflow-y: auto;
+    //overflow-x: visible;
+
+}
