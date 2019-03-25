@@ -1,0 +1,33 @@
+:local(.container){
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 60px;
+
+
+    transition: 0.25s;
+
+    margin-bottom: 10px;
+}
+
+:local(.container:hover) {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+:local(.container:active) {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+
+
