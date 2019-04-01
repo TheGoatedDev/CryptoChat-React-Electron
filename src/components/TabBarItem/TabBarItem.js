@@ -3,10 +3,13 @@ import * as style from './TabBarItem.css';
 
 
 
-class TabBar extends React.Component {
+class TabBarItem extends React.Component {
 
     constructor( props ) {
         super(props);
+        this.state = {
+
+        };
     }
 
     sectionStyle = {
@@ -28,4 +31,4 @@ class TabBar extends React.Component {
 
 }
 
-export default TabBar;
+export default TabBarItem;
