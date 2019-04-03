@@ -13,12 +13,10 @@ class TabBarItem extends React.Component {
     }
 
     sectionStyle = {
-        width: "60px",
-        height: "60px",
         backgroundImage: `url(${this.props.image})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
     };
 
     render() {

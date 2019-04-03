@@ -1,4 +1,7 @@
 :local(.container){
+
+    display: inline;
+
     width: 60px;
     height: 60px;
 
@@ -8,8 +11,11 @@
     border-radius: 60px;
 
 
-    transition: 0.25s;
 
+    margin-top: auto;
+    margin-bottom: auto;
+
+    transition: 0.25s;
     margin-right: 15px;
 }
 
@@ -18,15 +24,19 @@
     -moz-transform: scale(1.1);
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
-    transform: scale(1.11);
+    transform: scale(1.1);
+
+    box-shadow: 0px 0px 5px black;
 }
 
 :local(.container:active) {
-    -webkit-transform: scale(0.9);
-    -moz-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    -o-transform: scale(0.9);
-    transform: scale(0.9);
+    -webkit-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    transform: scale(0.95);
+
+
 }
 
 

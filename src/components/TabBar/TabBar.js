@@ -15,7 +15,9 @@ class TabBar extends React.Component {
     render() {
         return (
         <div className={style.container}>
-            {this.props.children}
+            <div className={style.wrapper}>
+                {this.props.children}
+            </div>
         </div>
         );
     }

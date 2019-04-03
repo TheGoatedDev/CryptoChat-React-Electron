@@ -2,7 +2,7 @@
     display: block;
 
     width: 100vw;
-    height: 20px;
+    height: 24px;
 
     padding-left: 10px;
 
@@ -14,11 +14,11 @@
 
 :local(.title) {
 
-    display: inline;
+    display: inline-flex;
 
     color: white;
-    font-family: 'Pacifico', cursive;
-    font-size: 0.80rem;
+    font-family: 'Lobster', cursive;
+    font-size: 1rem;
 
 }
 
@@ -27,14 +27,14 @@
     float: right;
     display: inline-block;
     margin-right: 10px;
-    margin-top: -3px;
 
-    height: 20px;
+
+    height: inherit;
 }
 
 :local(.contextMenu > button) {
     width: 30px;
-    height: 20px;
+    height: inherit;
 
     background: none;
     border: none;

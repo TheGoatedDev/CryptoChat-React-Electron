@@ -2,14 +2,42 @@
     
     position: fixed;
 
+    display: flex;
+
     bottom: 0;
 
     width: 100vw;
     height: 80px;
 
-    text-align: center;
-
     background: rgb(70, 70, 70);
-    margin-top: 15px;
-    //padding-top: 15px;
+
+    padding-left: 15px;
+    padding-right: auto;
+
+    overflow-x: overlay;
+    overflow-y: hidden;
+
 }
+
+:local(.wrapper) {
+
+    display: flex;
+    padding-right: 15px;
+
+}
+
+:local(.container::-webkit-scrollbar) {
+    width: 8px;
+    height: 8px;
+}
+
+:local(.container::-webkit-scrollbar-thumb) {
+    background: rgba(80, 80, 80, 1);
+    transition: all 0.5s;
+    border-radius: 6px;
+}
+
+:local(.container::-webkit-scrollbar-thumb:hover) {
+    background: rgba(110, 110, 110, 1);
+}
+

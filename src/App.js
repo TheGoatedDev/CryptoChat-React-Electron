@@ -9,13 +9,38 @@ class App extends Component {
   render() {
       return (
           <div className="App">
-            <Titlebar/>
-            <TabBar>
-                <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg"/>
-                <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg"/>
-                <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg"/>
-                <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg"/>
-            </TabBar>
+                <Titlebar></Titlebar>
+
+                Chat Zone
+
+                <TabBar>
+
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="0s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="0.5s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="1s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="1.5s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="0s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="0.5s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="1s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="1.5s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="0s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="0.5s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="1s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="1.5s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="0s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="0.5s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="1s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="1.5s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="0s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="1s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="1.5s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="0s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="0.5s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="1s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="1.5s"/>
+                    <TabBarItem image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg" delay="0s"/>
+
+                </TabBar>
           </div>
       );
   }
