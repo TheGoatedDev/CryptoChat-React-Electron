@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
+:root {
+    --user-areaSize: 250px;
+}
+
 html, body {
     width: 100vw;
     height: 100vh;
 
     margin: 0;
     padding: 0;
+
+    min-width: 800px;
 
     background: rgb(80, 80, 80);
 
@@ -19,3 +25,33 @@ html, body {
     height: 100vh;
 
 }
+
+.mainArea {
+    display: inline;
+    
+    width: 100%;
+    height: 100%;
+}
+
+.chatArea {
+    float: left;
+    display: inline-block;
+
+    background: white;
+
+    width: calc(100% - var(--user-areaSize));
+    height: 100%;
+
+}
+
+.userArea {
+    float: right;
+    display: inline-block;
+
+    background: rgb(80, 80, 80);
+
+    width: var(--user-areaSize);
+    height: 100%;
+
+}
+

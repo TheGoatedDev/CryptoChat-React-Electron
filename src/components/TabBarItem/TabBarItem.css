@@ -10,13 +10,15 @@
 
     border-radius: 60px;
 
-
+    position: relative;
 
     margin-top: auto;
     margin-bottom: auto;
 
     transition: 0.25s;
     margin-right: 15px;
+
+    z-index: 0;
 }
 
 :local(.container:hover) {
@@ -35,9 +37,39 @@
     -ms-transform: scale(0.95);
     -o-transform: scale(0.95);
     transform: scale(0.95);
-
-
 }
 
+
+
+:local(.container .tooltiptext) {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(60, 60, 60);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    margin-top: 35%;
+    position: absolute;
+    z-index: 3;
+    top: -5px;
+    left: 120%;
+}
+
+:local(.container .tooltiptext::after) {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgb(60, 60, 60) transparent transparent;
+}
+
+:local(.container:hover .tooltiptext) {
+    visibility: visible;
+    z-index: 500 !important;
+}
 
 

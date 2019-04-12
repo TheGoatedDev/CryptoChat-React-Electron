@@ -22,7 +22,7 @@ class TabBarItem extends React.Component {
     render() {
         return (
             <button className={style.container} style={ this.sectionStyle }>
-
+                <span className={style.tooltiptext}>{this.props.name ? this.props.name : "Undefined"}</span>
             </button>
         );
     }
