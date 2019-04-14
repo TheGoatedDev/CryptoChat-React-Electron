@@ -19,6 +19,9 @@
     margin-right: 15px;
 
     z-index: 0;
+
+    color: white;
+
 }
 
 :local(.container:hover) {

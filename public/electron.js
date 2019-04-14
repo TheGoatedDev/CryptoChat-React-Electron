@@ -9,7 +9,7 @@ const isDev = require('electron-is-dev');
 let mainWindow;
 
 function createWindow() {
-    mainWindow = new BrowserWindow({ width: 1200, height: 900, frame: false, minWidth: 800, show: false });
+    mainWindow = new BrowserWindow({ width: 1200, height: 900, frame: false, minWidth: 800, show: false, useContentSize: true });
     mainWindow.on('closed', () => mainWindow = null);
 
     splash = new BrowserWindow({width: 400, height: 600, frame: false, resizable: false});

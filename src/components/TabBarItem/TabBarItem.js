@@ -7,8 +7,13 @@ class TabBarItem extends React.Component {
 
     constructor( props ) {
         super(props);
-        this.state = {
 
+        var Notation;
+        Notation = this.props.name.split(' ');
+
+
+        this.state = {
+            name: this.props.name
         };
     }
 
@@ -22,7 +27,7 @@ class TabBarItem extends React.Component {
     render() {
         return (
             <button className={style.container} style={ this.sectionStyle }>
-                <span className={style.tooltiptext}>{this.props.name ? this.props.name : "Undefined"}</span>
+                { this.state.name }
             </button>
         );
     }

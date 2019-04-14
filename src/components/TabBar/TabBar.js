@@ -8,8 +8,12 @@ class TabBar extends React.Component {
     constructor( props ) {
         super(props);
         this.state = {
-
+            servers: []
         };
+    }
+
+    addServer( ipAddress ) {
+
     }
 
     render() {
