@@ -8,17 +8,13 @@ class TabBarItem extends React.Component {
     constructor( props ) {
         super(props);
 
-        var Notation;
-        Notation = this.props.name.split(' ');
-
-
         this.state = {
             name: this.props.name
         };
     }
 
     sectionStyle = {
-        backgroundImage: `url(${this.props.image})`,
+        backgroundImage: `url(${this.props.image ? this.props.image : "https://ctvalleybrewing.com/wp-content/uploads/2017/04/avatar-placeholder.png"})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
@@ -27,7 +23,6 @@ class TabBarItem extends React.Component {
     render() {
         return (
             <button className={style.container} style={ this.sectionStyle }>
-                { this.state.name }
             </button>
         );
     }

@@ -1,0 +1,25 @@
+:local(.container) {
+    
+    position: relative;
+
+    width: 100%;
+    height: calc(100% - 110px);
+
+    margin: 0;
+    padding: 0;
+    
+
+}
+
+:local(.textEntryWrapper) {
+    position: absolute;
+
+    bottom: 0;
+
+    border: 2px white solid;
+    border-radius: 30px;
+
+    padding: 5px;
+}
+
+

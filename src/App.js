@@ -3,7 +3,8 @@ import './App.css';
 
 import Titlebar from './components/Titlebar/Titlebar';
 import TabBar from './components/TabBar/TabBar';
-import TabBarItem from './components/TabBarItem/TabBarItem';
+import Chat from './components/Chat/Chat';
+
 
 //TODO: Add Socket Communication
 
@@ -28,61 +29,17 @@ class App extends Component {
 
                 <div className="mainArea">
 
+                    <div className="chatArea">
+                        <Chat/>
+                    </div>
 
+                    <div className="userArea">
+
+                    </div>
 
                 </div>
 
-                <TabBar>
-
-
-                    <TabBarItem
-                        image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg"
-                        name="Oof"
-                    />
-
-                    <TabBarItem
-                        image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg"
-                        name="Oof"
-                    />
-
-                    <TabBarItem
-                        image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg"
-                        name="Oof"
-                    />
-                    <TabBarItem
-                        image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg"
-                        name="Oof"
-                    />
-                    <TabBarItem
-                        image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg"
-                        name="Oof"
-                    />
-                    <TabBarItem
-                        image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg"
-                        name="Oof"
-                    />
-                    <TabBarItem
-                        image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg"
-                        name="Oof"
-                    />
-                    <TabBarItem
-                        image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg"
-                        name="Oof"
-                    />
-
-                    <TabBarItem
-                        image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg"
-                        name="Oof"
-                    />
-                    <TabBarItem
-                        image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg"
-                        name="Oof"
-                    />
-                    <TabBarItem
-                        image="https://i.pinimg.com/originals/44/c7/73/44c773de9847d476e4731da0af23318e.jpg"
-                        name="Oof"
-                    />
-
+                <TabBar >
                 </TabBar>
           </div>
         );

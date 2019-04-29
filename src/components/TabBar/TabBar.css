@@ -17,6 +17,8 @@
     overflow-x: overlay;
     overflow-y: hidden;
 
+    z-index: 4;
+
 }
 
 :local(.wrapper) {
@@ -28,20 +30,21 @@
 
 :local(.container::-webkit-scrollbar) {
     width: 8px;
-    height: 8px;
+    height: 10px;
+    transition: ease-in-out 1.5s;
 }
 
-:local(.container::-webkit-scrollbar + .container) {
+:local(.container::-webkit-scrollbar-thumb:hover .container) {
     height: 90px;
 }
 
 :local(.container::-webkit-scrollbar-thumb) {
-    background: rgba(80, 80, 80, 1);
-    transition: all 0.5s;
+    background: rgba(80, 80, 80, 0.4);
+    margin-right: 15px;
     border-radius: 6px;
 }
 
 :local(.container::-webkit-scrollbar-thumb:hover) {
-    background: rgba(110, 110, 110, 1);
+    background: rgba(110, 110, 110, 0.8);
 }
 
