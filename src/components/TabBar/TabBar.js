@@ -38,7 +38,7 @@ class TabBar extends React.Component {
         this.serverListRenderData = (
             (this.state.servers).map( server=> {
                 count++;
-                return <TabBarItem key={count} name={server} ></TabBarItem>
+                return <TabBarItem key={count} name={server} />
             })
         )
 
