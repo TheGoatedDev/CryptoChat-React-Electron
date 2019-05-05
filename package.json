@@ -6,6 +6,7 @@
   "main": "public/electron.js",
   "dependencies": {
     "electron-is-dev": "^1.0.1",
+    "electron-react-devtools": "^0.5.3",
     "moment": "^2.24.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",

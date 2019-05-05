@@ -33,9 +33,19 @@
     border: none;
     outline: none;
 
-    width: 350px;
-
+    color: white;
+    padding-left: 5px;
     
+
+    font-size: 1.4rem;
+}
+
+:local(.textEntryWrapper > button[type="submit"]) {
+    background: none;
+    border: none;
+    outline: none;
+
+    color: white;
 
     font-size: 1.4rem;
 }

@@ -14,7 +14,7 @@ class TabBar extends React.Component {
             serverRender: null // Hold Real Render for Tab Bar
         };
 
-        this.serverListRender = null; //Stores Render for Server List for Setting to State
+        //this.serverListRender = null; //Stores Render for Server List for Setting to State
 
 
         this.testButton = this.testButton.bind(this);
