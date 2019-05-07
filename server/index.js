@@ -11,9 +11,11 @@ var serverINFO = {
 
 io.on('connection', (socket) => {
 
-    console.log("[Crypto-Chat Server] Added "+socket.id+" to the Unauthenicated Socket List");
+    // Add Newly connected Socket to a List
+    console.log("[Crypto-Chat Server] Added "+socket.id+" to the Socket List");
     socketList[socket.id] = socket;
 
+    // Send the New Socket the Server Infomation
     socket.emit('INFO', serverINFO);
 
 
@@ -25,13 +27,13 @@ io.on('connection', (socket) => {
 
         var id = uuid(); // Generates UUID for User
 
-        console.log(`USER: ${data.username} wanted to Register and got ${id}`); // DEBUG
+        console.log(`[Crypto-Chat Server] ${data.username} wanted to Register and got ${id}`); // DEBUG
 
         socketList[socket.id] = {ID: socket.id, Username: data.username, UUID: id, socket: socket};
         socket.UUID = id;
         socket.Auth = true;
 
-        console.log(`Authenicated User: ${data.username} Register with ${socket.UUID}`);
+        console.log(`[Crypto-Chat Server] Authenicated User: ${data.username} Register with ${socket.UUID}`);
         socket.emit('REGISTER', {id: socket.UUID});
     });
 

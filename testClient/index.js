@@ -1,6 +1,6 @@
 const socket = require('socket.io-client')("http://localhost:13371");
 
-var username = "Royal Bitch"
+var username = "Royal Bitch";
 var id = "";
 
 console.log("[TEST Client] Alive");
@@ -25,5 +25,5 @@ socket.on('INFO', (data) => {
 
 socket.on('REGISTER', (data) => {
    id = data.id;
-   console.log(`${username} Regstered with ${id}`);
+   console.log(`${username} Registered with ${id}`);
 });

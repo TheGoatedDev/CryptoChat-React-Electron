@@ -16,6 +16,8 @@
 
     text-align: center;
 
+    width: 60%;
+
     bottom: 5px;
     left: 50%;
 
@@ -33,11 +35,18 @@
     border: none;
     outline: none;
 
+    display: inline-block;
+
+    float: left;
+
     color: white;
     padding-left: 5px;
     
 
     font-size: 1.4rem;
+
+    width: 90%;
+
 }
 
 :local(.textEntryWrapper > button[type="submit"]) {
@@ -45,8 +54,13 @@
     border: none;
     outline: none;
 
+    display: inline-block;
+
+    float: right;
+
     color: white;
 
     font-size: 1.4rem;
+
 }
 

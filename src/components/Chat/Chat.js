@@ -25,9 +25,13 @@ class Chat extends React.Component {
         
     }
 
+    componentDidMount() {
+        this.context.Socket.connect("localhost");
+    }
+
     testClick(e) {
         e.preventDefault();
-
+        //this.context.Socket.connect("localhost");
         //Appending Chat Entry with text
         var newState = this.state.chatEntries;
         newState.push(this.state.textInput);
@@ -50,6 +54,7 @@ class Chat extends React.Component {
     setTextInput(e) {
 
         this.setState( { textInput: e.target.value } );
+        //this.context.callbacks.setTitleInfo(e.target.value);
 
     }
 

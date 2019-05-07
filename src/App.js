@@ -7,25 +7,43 @@ import Chat from './components/Chat/Chat';
 
 import GlobalContext from './context/GlobalContext';
 
+import Socket from './socket/socket';
+
 //TODO: Add Socket Communication
 
 class App extends Component {
+
     constructor(props, context) {
         super(props, context);
 
         this.state = {
-            user: null
-        }
+            user: null,
+            Socket: new Socket(this.setTitleInfo.bind(this)),
+
+            titleInfo: "Bippity Boopity Boo"
+        };
 
         this.setGlobalState = this.setState.bind(this);
+        
+
+        this.callbacks = {
+            setTitleInfo: this.setTitleInfo.bind(this)
+        };
+
+
     }
 
+
+    setTitleInfo( text ) {
+        this.setState({titleInfo: text});
+    }
 
     render() {
         return (
             <div className="App">
-            <GlobalContext.Provider value={ {setGlobalState: this.setGlobalState, GlobalState: this.state} } >
-                    <Titlebar/>
+            <GlobalContext.Provider value={ {Socket: this.state.Socket, callbacks: this.callbacks} } >
+                    
+                    <Titlebar titleInfo={this.state.titleInfo} />
 
                     <div className="mainArea">
 

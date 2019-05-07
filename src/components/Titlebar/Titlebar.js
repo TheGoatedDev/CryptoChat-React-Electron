@@ -1,15 +1,23 @@
 import React from 'react';
 import * as style from './Titlebar.css';
 
+import GlobalContext from '../../context/GlobalContext';
+
+
 const {remote} = window.require('electron');
 
 class Titlebar extends React.Component {
 
+    static contextType = GlobalContext;
+
     constructor( props ) {
         super(props);
         this.state = {
-
+            
         };
+
+
+
     }
 
     handleMinimize() {
@@ -36,7 +44,7 @@ class Titlebar extends React.Component {
             
             <div className={style.title}>Crypto-Chat</div>
             
-            
+            <div className={style.info}>{this.props.titleInfo}</div>
             
             <div className={style.contextMenu}>
     

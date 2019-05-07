@@ -22,6 +22,19 @@
 
 }
 
+:local(.info) {
+    text-align: center;
+    color: white;
+
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%);
+    
+    position: absolute;
+
+}
+
 :local(.contextMenu) {
     -webkit-app-region: no-drag;
     float: right;
