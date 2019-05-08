@@ -3,9 +3,10 @@ const io = require('socket.io-client');
 
 class Socket {
 
-    constructor(setTitleInfo) {
+    constructor(contextInfo) {
 
-        this.setTitleInfo = setTitleInfo;
+        this.setTitleInfo = contextInfo.callbacks.setTitleInfo;
+        this.addChatEntry = contextInfo.callbacks.addChatEntry;
 
         this.state = {
             socket: io("http://localhost:13371")
@@ -25,12 +26,13 @@ class Socket {
             this.setTitleInfo("Requesting for Registering");
             //console.log("Requesting for Registering");
             this.state.socket.emit('REGISTER', {username: this.username});
-            
-         
-            
-         
-         });
+             
+        });
 
+        this.state.socket.on('MESSAGE_NEW', (data) => {
+            console.log(data);
+            this.addChatEntry(data);
+        });
 
         this.state.socket.on('REGISTER', (data) => {
             var id = data.id;
@@ -41,10 +43,13 @@ class Socket {
 
 
         this.connect = this.connect.bind(this);
+        this.sendMessage = this.sendMessage.bind(this);
 
     }
 
-
+    sendMessage(msg) {
+        this.state.socket.emit('MESSAGE_SEND', {msg: msg});
+    }
 
     connect(serverAddress) {
         this.state.socket.disconnect();
@@ -53,6 +58,9 @@ class Socket {
 
         //this.state.socket.emit('REGISTER', {username: this.username});
     }
+
+
+
 
 }
 

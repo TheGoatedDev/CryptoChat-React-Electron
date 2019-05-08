@@ -12,12 +12,6 @@ class Titlebar extends React.Component {
 
     constructor( props ) {
         super(props);
-        this.state = {
-            
-        };
-
-
-
     }
 
     handleMinimize() {
@@ -44,7 +38,7 @@ class Titlebar extends React.Component {
             
             <div className={style.title}>Crypto-Chat</div>
             
-            <div className={style.info}>{this.props.titleInfo}</div>
+            <div className={style.info}>{this.props.TitleInfo}</div>
             
             <div className={style.contextMenu}>
     

@@ -13,9 +13,9 @@ class Chat extends React.Component {
         super(props);
 
         this.state = {
-            chatEntriesRender: null,
-            chatEntries: [],
-            textInput: ""
+            chatEntriesRender: null, // JSX Object with all the Current Chat Messages
+            chatEntries: [], // Array of all the Chat Messages to be make in to JSX Objects
+            textInput: "", // Current string in the Chat Entry Field
         };
 
         
@@ -23,6 +23,19 @@ class Chat extends React.Component {
         this.setTextInput = this.setTextInput.bind(this);
         this.testClick = this.testClick.bind(this);
         
+        this.count = 0;
+
+        setInterval(() => {
+            this.chatEntriesRenderData = (
+                (this.props.chatEntries).map( chatEntry=> {
+                    this.count++;
+                    return <ChatEntry key={this.count} msg={chatEntry.msg}/>
+                })
+            )
+
+            this.setState({chatEntriesRender: this.chatEntriesRenderData}); 
+        },100)
+
     }
 
     componentDidMount() {
@@ -32,23 +45,8 @@ class Chat extends React.Component {
     testClick(e) {
         e.preventDefault();
         //this.context.Socket.connect("localhost");
-        //Appending Chat Entry with text
-        var newState = this.state.chatEntries;
-        newState.push(this.state.textInput);
-        this.setState({ chatEntries: newState})
     
-
-        var count = 0;
-
-        this.chatEntriesRenderData = (
-            (this.state.chatEntries).map( message=> {
-                count++;
-                return <ChatEntry key={count} msg={message}/>
-            })
-        )
-
-        // Sets Render Data to serverRender State
-        this.setState({chatEntriesRender: this.chatEntriesRenderData}); 
+        this.context.Socket.sendMessage(this.state.textInput)
     }    
 
     setTextInput(e) {

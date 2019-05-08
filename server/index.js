@@ -37,6 +37,21 @@ io.on('connection', (socket) => {
         socket.emit('REGISTER', {id: socket.UUID});
     });
 
+    socket.on('MESSAGE_SEND', (data) => {
+        if (!isAuthenticated(socket)) {
+            //return;
+        }
+
+        if (data.msg) {
+            console.log(`[Crypto-Chat Server] got message ${data.msg} from ${socketList[socket.id].Username}`);
+            //TODO: FIX MESSAGES NOT BEING SENT to CLIENT
+            io.emit('MESSAGE_NEW', {username: socketList[socket.id].Username, msg: data.msg});
+            //io.send('MESSAGE_NEW', {username: socketList[socket.id].Username, msg: data.msg});
+        }
+
+        
+    });
+
     socket.on('disconnect', () => {
         console.log("[Crypto-Chat Server] Removed "+socket.id+" to the Socket Lists");
         delete socketList[socket.id];

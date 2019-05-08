@@ -9,30 +9,41 @@ import GlobalContext from './context/GlobalContext';
 
 import Socket from './socket/socket';
 
-//TODO: Add Socket Communication
-
 class App extends Component {
 
-    constructor(props, context) {
-        super(props, context);
+    constructor(props) {
+        super(props);
+
+        this.ContextInfo = {
+
+            Socket: null, // Root State Socket Class
+
+            callbacks: {
+                setTitleInfo: this.setTitleInfo.bind(this), // Binds setTitleInfo to the Context Info
+                addChatEntry: this.addChatEntry.bind(this), 
+            }
+        }
 
         this.state = {
             user: null,
-            Socket: new Socket(this.setTitleInfo.bind(this)),
+            Socket: new Socket(this.ContextInfo),
 
-            titleInfo: "Bippity Boopity Boo"
+            titleInfo: "Bippity Boopity Boo",
+
+            chatEntries: []
         };
-
-        this.setGlobalState = this.setState.bind(this);
         
-
-        this.callbacks = {
-            setTitleInfo: this.setTitleInfo.bind(this)
-        };
+        this.ContextInfo.Socket = this.state.Socket;
+        
 
 
     }
 
+    addChatEntry( chatEntry ) {
+        var newChatEntries = this.state.chatEntries;
+        newChatEntries.push(chatEntry);
+        this.setState({chatEntries: newChatEntries});
+    }
 
     setTitleInfo( text ) {
         this.setState({titleInfo: text});
@@ -41,14 +52,14 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-            <GlobalContext.Provider value={ {Socket: this.state.Socket, callbacks: this.callbacks} } >
+            <GlobalContext.Provider value={ this.ContextInfo } >
                     
-                    <Titlebar titleInfo={this.state.titleInfo} />
+                    <Titlebar TitleInfo={this.state.titleInfo}/>
 
                     <div className="mainArea">
 
                         <div className="chatArea">
-                            <Chat/>
+                            <Chat chatEntries={this.state.chatEntries}/>
                         </div>
 
                         <div className="userArea">
