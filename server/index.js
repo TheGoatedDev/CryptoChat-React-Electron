@@ -43,10 +43,10 @@ io.on('connection', (socket) => {
         }
 
         if (data.msg) {
+            
             console.log(`[Crypto-Chat Server] got message ${data.msg} from ${socketList[socket.id].Username}`);
-            //TODO: FIX MESSAGES NOT BEING SENT to CLIENT
-            io.emit('MESSAGE_NEW', {username: socketList[socket.id].Username, msg: data.msg});
-            //io.send('MESSAGE_NEW', {username: socketList[socket.id].Username, msg: data.msg});
+            io.emit('MESSAGE_RECEIVED', {username: socketList[socket.id].Username, msg: data.msg});
+            
         }
 
         

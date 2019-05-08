@@ -18,10 +18,10 @@ class Chat extends React.Component {
             textInput: "", // Current string in the Chat Entry Field
         };
 
-        
+        this.TextInput = React.createRef();
 
         this.setTextInput = this.setTextInput.bind(this);
-        this.testClick = this.testClick.bind(this);
+        this.onSendMessage = this.onSendMessage.bind(this);
         
         this.count = 0;
 
@@ -29,12 +29,12 @@ class Chat extends React.Component {
             this.chatEntriesRenderData = (
                 (this.props.chatEntries).map( chatEntry=> {
                     this.count++;
-                    return <ChatEntry key={this.count} msg={chatEntry.msg}/>
+                    return <ChatEntry key={this.count} username={chatEntry.username} msg={chatEntry.msg}/>
                 })
             )
 
             this.setState({chatEntriesRender: this.chatEntriesRenderData}); 
-        },100)
+        },0);
 
     }
 
@@ -42,11 +42,11 @@ class Chat extends React.Component {
         this.context.Socket.connect("localhost");
     }
 
-    testClick(e) {
-        e.preventDefault();
-        //this.context.Socket.connect("localhost");
-    
-        this.context.Socket.sendMessage(this.state.textInput)
+    onSendMessage(e) {
+        e.preventDefault(); // Stop Window Reloading on Submit
+        this.TextInput.current.value = ""; // Clear the Text Input
+        this.context.Socket.sendMessage(this.state.textInput); // Send the Message
+        this.setState({textInput: ""}); // Clears the Text input State
     }    
 
     setTextInput(e) {
@@ -65,8 +65,8 @@ class Chat extends React.Component {
                 {this.state.chatEntriesRender}
             </div>
             
-            <form className={style.textEntryWrapper} onSubmit={this.testClick}>
-                <input onChange={this.setTextInput} type="text" maxLength="200"></input>
+            <form className={style.textEntryWrapper} onSubmit={this.onSendMessage}>
+                <input ref={this.TextInput} onChange={this.setTextInput} type="text" maxLength="200"></input>
                 <button type="submit">></button>
             </form>
             

@@ -23,7 +23,7 @@ class ChatEntry extends React.Component {
         <div className={style.container}>
             
             
-            <span>Royal: </span>
+            <span>{this.props.username}: </span>
             {this.props.msg}
             
         </div>

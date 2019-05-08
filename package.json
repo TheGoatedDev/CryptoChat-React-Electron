@@ -6,19 +6,18 @@
   "main": "public/electron.js",
   "dependencies": {
     "electron-is-dev": "^1.0.1",
-    "electron-react-devtools": "^0.5.3",
     "moment": "^2.24.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-scripts": "2.1.8",
     "socket.io-client": "^2.2.0",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "electron-devtools-installer": "^2.2.4"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
     "electron": "^4.1.1",
     "electron-builder": "^20.39.0",
-    "electron-devtools-installer": "^2.2.4",
     "typescript": "^3.3.4000",
     "wait-on": "^3.2.0"
   },

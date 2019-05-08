@@ -29,8 +29,8 @@ class Socket {
              
         });
 
-        this.state.socket.on('MESSAGE_NEW', (data) => {
-            console.log(data);
+        this.state.socket.on('MESSAGE_RECEIVED', (data) => {
+            //console.log(data);
             this.addChatEntry(data);
         });
 
@@ -42,6 +42,7 @@ class Socket {
         });
 
 
+        // FUNCTION BINDING
         this.connect = this.connect.bind(this);
         this.sendMessage = this.sendMessage.bind(this);
 
