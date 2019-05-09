@@ -5,14 +5,15 @@
   "author": "Royal",
   "main": "public/electron.js",
   "dependencies": {
+    "electron-devtools-installer": "^2.2.4",
     "electron-is-dev": "^1.0.1",
     "moment": "^2.24.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "socket.io-client": "^2.2.0",
-    "uuid": "^3.3.2",
-    "electron-devtools-installer": "^2.2.4"
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",

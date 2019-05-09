@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import { MemoryRouter, Route } from "react-router-dom";
 import './App.css';
 
 import Titlebar from './components/Titlebar/Titlebar';
 import TabBar from './components/TabBar/TabBar';
+
 import Chat from './components/Chat/Chat';
+import Profile from './components/Profile/Profile';
+
 
 import GlobalContext from './context/GlobalContext';
 
@@ -51,27 +55,30 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
-            <GlobalContext.Provider value={ this.ContextInfo } >
-                    
-                    <Titlebar TitleInfo={this.state.titleInfo}/>
+            <MemoryRouter>
+                <div className="App">
+                <GlobalContext.Provider value={ this.ContextInfo } >
+                        
+                        <Titlebar TitleInfo={this.state.titleInfo}/>
 
-                    <div className="mainArea">
+                        <div className="mainArea">
 
-                        <div className="chatArea">
-                            <Chat chatEntries={this.state.chatEntries}/>
+                            <div className="chatArea">
+                                <Route path="/" exact render={() => <Chat chatEntries={this.state.chatEntries} />} />
+                                <Route path="/profile" render={() => <Profile></Profile>}/>
+                            </div>
+
+                            <div className="userArea">
+
+                            </div>
+
                         </div>
 
-                        <div className="userArea">
-
-                        </div>
-
-                    </div>
-
-                    <TabBar >
-                    </TabBar>
-            </GlobalContext.Provider>
-            </div>
+                        <TabBar >
+                        </TabBar>
+                </GlobalContext.Provider>
+                </div>
+            </MemoryRouter>
         );
     }
 }

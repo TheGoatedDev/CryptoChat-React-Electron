@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import * as style from './Chat.css';
 import GlobalContext from '../../context/GlobalContext';
 
 import ChatEntry from '../ChatEntry/ChatEntry';
+
 
 class Chat extends React.Component {
 
@@ -18,23 +20,36 @@ class Chat extends React.Component {
             textInput: "", // Current string in the Chat Entry Field
         };
 
-        this.TextInput = React.createRef();
+        this.TextInput = React.createRef(); // Reference for the Chat Input Field
+        this.logEntry = React.createRef(); // Reference for the Log Entry Div
 
+        // Binding Functions
         this.setTextInput = this.setTextInput.bind(this);
         this.onSendMessage = this.onSendMessage.bind(this);
         
         this.count = 0;
 
-        setInterval(() => {
-            this.chatEntriesRenderData = (
-                (this.props.chatEntries).map( chatEntry=> {
-                    this.count++;
-                    return <ChatEntry key={this.count} username={chatEntry.username} msg={chatEntry.msg}/>
-                })
-            )
 
-            this.setState({chatEntriesRender: this.chatEntriesRenderData}); 
-        },0);
+    }
+    
+    // Runs after the Render has re-ran
+    componentDidUpdate() {
+        this.logEntry.current.scrollTop = this.logEntry.current.scrollHeight;
+    }
+
+    // Run on Update of Props
+    componentWillReceiveProps() {
+
+        
+        this.chatEntriesRenderData = (
+            (this.props.chatEntries).map( chatEntry=> {
+                this.count++;
+                return <ChatEntry key={this.count} username={chatEntry.username} msg={chatEntry.msg}/>
+            })
+        )
+
+        this.setState({chatEntriesRender: this.chatEntriesRenderData}); 
+        //this.logEntry.current.scrollTop = this.logEntry.current.scrollHeight;
 
     }
 
@@ -61,14 +76,24 @@ class Chat extends React.Component {
         <div className={style.container}>
             
             
-            <div className={style.logEntry}>
+            <div ref={this.logEntry} className={style.logEntry}>
                 {this.state.chatEntriesRender}
             </div>
             
-            <form className={style.textEntryWrapper} onSubmit={this.onSendMessage}>
-                <input ref={this.TextInput} onChange={this.setTextInput} type="text" maxLength="200"></input>
-                <button type="submit">></button>
-            </form>
+            <div className={style.interactionZone}>
+
+                <button className={style.settingsButton}><i className="fas fa-cog"></i></button>
+
+                <Link to="/profile" className={style.profileButton}><i className="fas fa-user"></i></Link>
+
+                <form className={style.textEntryWrapper} onSubmit={this.onSendMessage}>
+                    <input ref={this.TextInput} onChange={this.setTextInput} type="text" maxLength="200"></input>
+                    <button type="submit">></button>
+                </form>
+
+            </div>
+
+            
             
         </div>
         );

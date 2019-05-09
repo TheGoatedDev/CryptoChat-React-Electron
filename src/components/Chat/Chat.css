@@ -2,12 +2,114 @@
     
     position: relative;
 
-    width: 100%;
+    
     height: calc(100% - 80px - 24px);
 
     margin: 0;
     padding: 0;
+
+    margin-left: 10px;
+    padding-top: 5px;
     
+
+}
+
+:local(.logEntry) {
+    height: calc(100% - 60px);
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+:local(.logEntry::-webkit-scrollbar) {
+    width: 12px;
+    height: 10px;
+    transition: ease-in-out 1.5s;
+}
+
+:local(.logEntry::-webkit-scrollbar-thumb) {
+    background: rgba(90, 90, 90, 0.8);
+    border-radius: 4px;
+}
+
+:local(.logEntry::-webkit-scrollbar-thumb:hover) {
+    background: rgba(110, 110, 110, 0.3);
+}
+
+
+:local(.interactionZone) {
+    height: 60px;
+    width: inherit;
+    bottom: 0px;
+}
+
+:local(.settingsButton) {
+    border: none;
+    outline: none;
+    background: none;
+
+    text-align: center;
+
+    height: 60px;
+    width: 60px;
+
+    padding: auto;
+
+    color: white;
+
+    font-size: 1.5rem;
+
+    transition: all 0.5s;
+}
+
+:local(.settingsButton:hover) {
+
+    color: gray;
+
+    font-size: 1.9rem;
+
+}
+
+:local(.settingsButton:active) {
+
+    color: gray;
+
+    font-size: 1.4rem;
+
+}
+
+:local(.profileButton) {
+    border: none;
+    outline: none;
+    background: none;
+
+    text-align: center;
+
+    height: 60px;
+    width: 60px;
+
+    padding: auto;
+
+    color: white;
+
+    font-size: 1.5rem;
+
+    transition: all 0.5s;
+}
+
+:local(.profileButton:hover) {
+
+    color: gray;
+
+    font-size: 1.9rem;
+
+}
+
+:local(.profileButton:active) {
+
+    color: gray;
+
+    font-size: 1.4rem;
 
 }
 
@@ -15,16 +117,16 @@
     position: absolute;
 
     text-align: center;
-
     width: 60%;
-
-    bottom: 5px;
-    left: 50%;
+    
 
     border: 2px white solid;
     border-radius: 30px;
 
+    left: 50%;
     transform: translateX(-50%);
+
+    bottom: 10px;
 
     padding: 5px;
 
