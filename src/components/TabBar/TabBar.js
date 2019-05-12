@@ -45,8 +45,13 @@ class TabBar extends React.Component {
         // Sets Render Data to serverRender State
         this.setState({serverRender: this.serverListRenderData}); 
 
-
+        this.visitLink = this.visitLink.bind(this);
         //console.log(this.serverListRender);
+    }
+
+    visitLink(e) {
+        e.preventDefault();
+        require('open')(e.target.href);
     }
 
     render() {
@@ -58,6 +63,13 @@ class TabBar extends React.Component {
                 </TabBarAddItem>
 
                 {this.state.serverRender}
+
+                <div className={style.shareBox}>
+                    <a href="https://trello.com/b/EAICgB2X/crypto-chat"><i className="fab fa-trello"></i></a>
+                    <a href="https://github.com/Royal-Code/CryptoChat-React-Electron"><i className="fab fa-github"></i></a>
+                    <br/>
+                    View
+                </div>
 
             </div>
         </div>

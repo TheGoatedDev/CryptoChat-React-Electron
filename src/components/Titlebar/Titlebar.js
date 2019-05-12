@@ -10,9 +10,9 @@ class Titlebar extends React.Component {
 
     static contextType = GlobalContext;
 
-    constructor( props ) {
-        super(props);
-    }
+    // constructor( props ) {
+    //     super(props);
+    // }
 
     handleMinimize() {
         remote.BrowserWindow.getFocusedWindow().minimize();

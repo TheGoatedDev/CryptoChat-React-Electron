@@ -1,0 +1,87 @@
+:local(.container) {
+    display: inline-block;
+
+    border: none;
+    outline: none;
+    background: none;
+
+    text-align: center;
+
+    height: 60px;
+    width: 60px;
+
+    color: white;
+
+    font-size: 1.5rem;
+
+    transition: all 0.5s;
+}
+
+:local(.container:hover) {
+
+    color: gray;
+
+    font-size: 1.9rem;
+    cursor: pointer;
+}
+
+:local(.container:active) {
+
+    color: gray;
+
+    font-size: 1.4rem;
+
+}
+
+:local(.popupContainer) {
+    position: absolute;
+
+    margin-left: -10px;
+
+    top: 0;
+    left: 0;
+
+    background: rgba(0, 0, 0, 0.3);
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 100;
+}
+
+:local(.popupWrapper) {
+
+    position: absolute;
+
+    width: 400px;
+    height: 500px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+
+    color: white;
+
+}
+
+:local(.popupExitButton) {
+    outline: none;
+    border: none;
+    background: none;
+
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    color: white;
+}
+
+:local(.popupExitButton:hover) {
+    cursor: pointer;
+} 

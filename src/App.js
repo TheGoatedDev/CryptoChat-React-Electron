@@ -8,10 +8,10 @@ import TabBar from './components/TabBar/TabBar';
 import Chat from './components/Chat/Chat';
 import Profile from './components/Profile/Profile';
 
-
 import GlobalContext from './context/GlobalContext';
 
 import Socket from './socket/socket';
+
 
 class App extends Component {
 
@@ -25,11 +25,11 @@ class App extends Component {
             callbacks: {
                 setTitleInfo: this.setTitleInfo.bind(this), // Binds setTitleInfo to the Context Info
                 addChatEntry: this.addChatEntry.bind(this), 
+                changeUsername: this.changeUsername.bind(this),
             }
         }
 
         this.state = {
-            user: null,
             Socket: new Socket(this.ContextInfo),
 
             titleInfo: "Bippity Boopity Boo",
@@ -41,6 +41,11 @@ class App extends Component {
         
 
 
+    }
+
+
+    changeUsername( username ) {
+        localStorage.setItem('username', username);       
     }
 
     addChatEntry( chatEntry ) {
@@ -61,16 +66,20 @@ class App extends Component {
                         
                         <Titlebar TitleInfo={this.state.titleInfo}/>
 
+                        
+
                         <div className="mainArea">
 
+                            
+
                             <div className="chatArea">
+
+                                
+
                                 <Route path="/" exact render={() => <Chat chatEntries={this.state.chatEntries} />} />
                                 <Route path="/profile" render={() => <Profile></Profile>}/>
                             </div>
 
-                            <div className="userArea">
-
-                            </div>
 
                         </div>
 

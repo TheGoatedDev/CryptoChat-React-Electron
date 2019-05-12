@@ -4,7 +4,7 @@ import * as style from './Chat.css';
 import GlobalContext from '../../context/GlobalContext';
 
 import ChatEntry from '../ChatEntry/ChatEntry';
-
+import DirectConnectPopUp from '../DirectConnectPopUp/DirectConnectPopUp';
 
 class Chat extends React.Component {
 
@@ -54,7 +54,7 @@ class Chat extends React.Component {
     }
 
     componentDidMount() {
-        this.context.Socket.connect("localhost");
+        this.context.callbacks.setTitleInfo("Chat");
     }
 
     onSendMessage(e) {
@@ -85,9 +85,11 @@ class Chat extends React.Component {
                 <button className={style.settingsButton}><i className="fas fa-cog"></i></button>
 
                 <Link to="/profile" className={style.profileButton}><i className="fas fa-user"></i></Link>
+                
+                <DirectConnectPopUp></DirectConnectPopUp>
 
                 <form className={style.textEntryWrapper} onSubmit={this.onSendMessage}>
-                    <input ref={this.TextInput} onChange={this.setTextInput} type="text" maxLength="200"></input>
+                    <input ref={this.TextInput} onChange={this.setTextInput} type="text" maxLength="500"></input>
                     <button type="submit">></button>
                 </form>
 

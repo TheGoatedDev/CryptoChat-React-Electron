@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import './Profile.css';
+import *  as style from './Profile.css';
 
+import UserEditor from '../UserEditor/UserEditor';
 
 import GlobalContext from '../../context/GlobalContext';
-;
+
 
 class Profile extends Component {
 
@@ -24,14 +25,17 @@ class Profile extends Component {
 
     }
 
-    
+    componentDidMount() {
+        this.context.callbacks.setTitleInfo("Profile");
+    }
 
     render() {
         return (
             
-            <div>
-                <h2>Profile</h2>
-                <Link to='/'>X</Link>
+            <div className={style.container}>
+                <Link className={style.exitButton} to='/'>Back</Link>
+                <br/>
+                <UserEditor></UserEditor>
             </div>
             
         );

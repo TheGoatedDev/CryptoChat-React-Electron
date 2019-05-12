@@ -2,6 +2,7 @@ const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const globalShortcut = electron.globalShortcut;
+const shell = electron.shell;
 
 const path = require('path');
 const isDev = require('electron-is-dev');
@@ -43,6 +44,13 @@ function createWindow() {
         console.log('An error occurred: ', err);
     });
 
+    const handleRedirect = (e, url) => {
+        if (url !== e.sender.getURL()) {
+          e.preventDefault()
+          shell.openExternal(url)
+        }
+    }
+    mainWindow.webContents.on('will-navigate', handleRedirect);
 }
 
 app.on('ready', createWindow);

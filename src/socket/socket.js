@@ -12,7 +12,7 @@ class Socket {
             socket: io("http://localhost:13371")
         };
 
-        this.username = "Royal";
+        this.username = localStorage.getItem('username');
 
         this.state.socket.on('connect', () => {
             console.log("Connected to Server");

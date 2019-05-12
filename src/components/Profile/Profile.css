@@ -1,0 +1,13 @@
+:local(.container) {
+    color: white;
+}
+
+:local(.exitButton) {
+    display: inline;
+    
+    color: white;
+
+    text-decoration: none;
+
+    
+}
