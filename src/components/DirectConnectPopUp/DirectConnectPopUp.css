@@ -38,6 +38,8 @@
 
     margin-left: -10px;
 
+    border-radius: 50px;
+
     top: 0;
     left: 0;
 
@@ -85,3 +87,7 @@
 :local(.popupExitButton:hover) {
     cursor: pointer;
 } 
+
+:local(.DirectConnectForm) {
+
+}

@@ -41,9 +41,10 @@ class UserEditor extends Component {
             this.PopUpComponent = (
                 <div className={style.popupContainer}>
                     <div className={style.popupWrapper}>
-                        <button className={style.popupExitButton} onClick={this.onDisplayPopUp}><i class="fas fa-times"></i></button>
+                        <button className={style.popupExitButton} onClick={this.onDisplayPopUp}><i className="fas fa-times"></i></button>
                         <h2>Direct Connection</h2>
-                        <form onSubmit={this.onConnectButton}>
+
+                        <form onSubmit={this.onConnectButton} className={style.DirectConnectForm}>
                             <input ref={this.IPAddressInput} type="text" placeholder="IP Address e.g: 192.169.0.1"></input>
                             <button type="submit">Connect</button>
                         </form>
@@ -58,7 +59,7 @@ class UserEditor extends Component {
         return (
             <span>
                 <button onClick={this.onDisplayPopUp} className={style.container}>
-                    <i class="fas fa-coins"></i>
+                    <i className="fas fa-coins"></i>
                 </button>
                 { this.PopUpComponent }
             </span>
