@@ -1,5 +1,5 @@
-const io = require('socket.io-client');
-
+import io from 'socket.io-client';
+import CryptoManager from '../crypto/cryptoManager';
 
 class Socket {
 
@@ -10,8 +10,9 @@ class Socket {
 
         this.socket = io();
         
+        this.crypto = new CryptoManager();
         
-        
+        console.log(this.crypto.keyPair);
         
 
         // FUNCTION BINDING
@@ -21,7 +22,9 @@ class Socket {
     }
 
     sendMessage(msg) {
-        this.socket.emit('MESSAGE_SEND', {msg: msg});
+        msg = this.crypto.encrypt(msg);
+        //console.log(msg);
+        this.socket.emit('MESSAGE_SEND', msg);
     }
 
     connect(serverAddress) {
@@ -41,14 +44,17 @@ class Socket {
 
             console.log(data);
             this.setTitleInfo("Requesting for Registering");
+            this.crypto.setServerPublicKey( data.pubKey );
             //console.log("Requesting for Registering");
-            this.socket.emit('REGISTER', {username: this.username});
+            this.socket.emit('REGISTER', {username: this.username, pubKey: this.crypto.clientKeyPair.publicKey});
              
         });
 
         this.socket.on('MESSAGE_RECEIVED', (data) => {
-            //console.log(data);
-            this.addChatEntry(data);
+            var msg = this.crypto.decrypt(data.msg);
+            //console.log('BOOP');
+            //console.log(msg);
+            this.addChatEntry({username: data.username, msg: msg});
         });
 
         this.socket.on('REGISTER', (data) => {
